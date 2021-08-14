@@ -4,9 +4,12 @@ on:
     branches:
       - master
 jobs:
-  Install-and-test
-    runs-on: ubuntu-lates
+  Install-and-test:
+    runs-on: ubuntu-latest
     steps:
-      - run: make install
-      - run: make test
-
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: make install
+      - name: Run tests
+        run: make test
