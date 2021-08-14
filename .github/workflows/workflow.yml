@@ -1,0 +1,9 @@
+name: Install dependencies and run tests
+on: [push]
+jobs:
+  Install-and-test
+    runs-on: ubuntu-lates
+    steps:
+      - run: make install
+      - run: make test
+
